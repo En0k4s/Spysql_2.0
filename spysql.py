@@ -664,14 +664,13 @@ def simpleCrawler(target,method=1):
     if method==1:
         s1 = GetSource(target)
         if s1=="Error occured":
-            print("Error Connnexion")
+      
             return("Network error")
         r = re.compile('href=".+"')
         stock =list()
         for link in r.findall(str(s1)):
             link = link.split("\"")
             for it in link:
-                print it
                 if re.search("http",it) or re.search("php",it) or re.search("html",it) :
                     it = it.replace(" ","")
                     """print("[*] ",(str(it[:60]))+"...")"""
